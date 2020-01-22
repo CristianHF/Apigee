@@ -1,0 +1,140 @@
+swagger: '2.0'
+info:
+  title: Accounts
+  version: 1.0.0
+  description: Allows get accounts list and account details.
+  contact:
+    name: Cristian Heredia Fernández
+    email: xwk.developer@gmail.com
+schemes:
+  - https
+basePath: /
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  X-Client-Id:
+    type: apiKey
+    in: header
+    name: X-Client-Id
+    description: Client id header
+security:
+  - X-Client-Id: []
+paths:
+  /accounts:
+    get:
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/accountsList'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errorList'
+      summary: Accounts list.
+      description: List of accounts.
+      parameters:
+        - $ref: '#/parameters/Authorization'
+      tags:
+        - Accounts
+  '/accounts/{account_id}':
+    get:
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/accountDetails'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/errorList'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errorList'
+      summary: Account details.
+      description: Details of an account.
+      parameters:
+        - $ref: '#/parameters/Authorization'
+        - name: account_id
+          type: string
+          required: true
+          in: path
+          description: Unique account identifier.
+      tags:
+        - Accounts
+definitions:
+  accountsList:
+    type: object
+    properties:
+      accountsList:
+        type: array
+        items:
+          $ref: '#/definitions/accountDetails'
+  accountDetails:
+    properties:
+      accountId:
+        type: string
+        description: Unique account identifier.
+        example: '1234567890'
+      alias:
+        type: string
+        description: Simple name for identify each account.
+        example: MyAccount1
+      mainBalance:
+        $ref: '#/definitions/balance'
+        description: "Account's main balance."
+      lastUpdateDate:
+        type: string
+        description: Last time the account was updated.
+        format: date
+        example: 01/20/2020
+    additionalProperties: false
+  balance:
+    properties:
+      amount:
+        type: number
+        description: Amount.
+        format: double
+        example: 10
+      currency:
+        type: string
+        description: Currency.
+        example: EUR
+    additionalProperties: false
+    description: "Object that represent account's balances. Includes amount and currency."
+  errorList:
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/error'
+  error:
+    properties:
+      code:
+        type: string
+        description: Error code.
+        example: 'XXX'
+      message:
+        type: string
+        description: Error message.
+        example: Message
+      level:
+        type: string
+        description: Error level.
+        example: Error
+      description:
+        type: string
+        description: Error description.
+        example: Description
+    additionalProperties: false
+parameters:
+  Authorization:
+    name: Authorization
+    type: string
+    required: true
+    in: header
+    description: Authorization header.
