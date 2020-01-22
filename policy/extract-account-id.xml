@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="Extract-Account-Id">
+    <DisplayName>Extract Account Id</DisplayName>
+    <Properties/>
+    <URIPath name="accountId">
+        <Pattern>**/{accountId}</Pattern>
+    </URIPath>
+    <Source clearPayload="false">request</Source>
+    <VariablePrefix>requestpath</VariablePrefix>
+</ExtractVariables>
