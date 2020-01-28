@@ -14,16 +14,6 @@ consumes:
 produces:
   - application/json
 securityDefinitions:
-  Client Credentials:
-    type: oauth2
-    description: Client credentials security flow.
-    flow: application
-    scopes:
-      account_list.read: Accounts list scope.
-      account_details.read: Account details scope.
-    tokenUrl: 'https://localhost.com/oauth/token'
-    x-tokenIntrospect:
-      url: 'https://localhost.com/oauth/introspect'
   X-Client-Id:
     type: apiKey
     in: header
@@ -47,9 +37,6 @@ paths:
       description: List of accounts.
       parameters:
         - $ref: '#/parameters/Authorization'
-      security:
-        - Client Credentials:
-            - account_list.read
       tags:
         - Accounts
   '/accounts/{account_id}':
@@ -76,9 +63,6 @@ paths:
           required: true
           in: path
           description: Unique account identifier.
-      security:
-        - Client Credentials:
-            - account_details.read
       tags:
         - Accounts
 definitions:
