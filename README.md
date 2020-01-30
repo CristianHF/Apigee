@@ -38,7 +38,13 @@ En el menú Develop -> Specs, pasando el ratón por encima, aparecen varias opci
 
 * Summary: opcionalmente podemos elegir si al crear el API proxy, lo desplemamos automáticamente, seleccionamos la opción **test** y terminamos pulsando en **Create**
 
-*Para poder empezar a consumir la API, es necesario asociarla a un producto, ese producto debe ser consumido por una Developer APP y esa APP debe tener asociado un Developer*
+-----
+
+### Primera prueba
+
+Con esto ya podemos empezar a consumir la API. Nos vamos al menú Develop -> API Proxies y seleccionamos el proxy anteriormente creado.
+
+En esta primera pantalla se nos muestra un resumen del proxy y entre otras cosas la URL de llamada.
 
 -----
 
@@ -81,3 +87,7 @@ Pulsar el botón **Create** de arriba a la derecha.
 
 -----
 
+Arriba a la derecha hay varias pestañas
+* DEVELOP: donde podemos modificar el código del proxy, consultar las diferentes revisiones y desplegar en los entornos
+
+*Para poder empezar a consumir la API, es necesario asociarla a un producto, ese producto debe ser consumido por una Developer APP y esa APP debe tener asociado un Developer*
