@@ -2,7 +2,7 @@
 
 Registrarse en Apigee: [Apigee login](https://login.apigee.com/login "Apigee login")
 
-
+-----
 ### Importar spec
 
 En el menú Develop -> Specs, pulsando en el botón **+Spec**, hay 3 opciones:
