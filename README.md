@@ -3,6 +3,7 @@
 Registrarse en Apigee: [Apigee login](https://login.apigee.com/login "Apigee login")
 
 -----
+
 ### Importar spec
 
 En el menú Develop -> Specs, pulsando en el botón **+Spec**, hay 3 opciones:
@@ -11,6 +12,7 @@ En el menú Develop -> Specs, pulsando en el botón **+Spec**, hay 3 opciones:
 * Import URL...: usando una URL, por ejemplo de GitHub
 * Import file...: cargar un fichero local
 
+-----
 
 ### Crear proxy a partir de una spec
 
@@ -38,6 +40,8 @@ En el menú Develop -> Specs, pasando el ratón por encima, aparecen varias opci
 
 *Para poder empezar a consumir la API, es necesario asociarla a un producto, ese producto debe ser consumido por una Developer APP y esa APP debe tener asociado un Developer*
 
+-----
+
 ### Crear un API Product
 
 En el menú Publish -> API Products, pulsar el botón **+API Product** de arriba a la derecha
@@ -53,9 +57,13 @@ Añadir un proxy en la sección **API proxies** pulsando en **Add a proxy**. En 
 
 Pulsar el botón **Save** de arriba a la derecha.
 
+-----
+
 ### Dar de alta a un Developer
 
 En el menú Publish -> Developer, pulsar en el botón **+Developer** de arriba a la derecha e introducir los datos necesarios.
+
+-----
 
 ### Crear una Developer APP
 
@@ -70,3 +78,6 @@ En el menú Publis -> Apps, pulsar en el botón **+App** de arriba a la derecha 
 * Product: pulsar el botón **Add product** y seleccionar el producto creado anteriormente.
 
 Pulsar el botón **Create** de arriba a la derecha.
+
+-----
+
