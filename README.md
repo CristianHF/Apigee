@@ -35,3 +35,5 @@ En el menú Develop -> Specs, pasando el ratón por encima, aparecen varias opci
 * Virtual hosts: dejamos como está y pulsamos **Next**
 
 * Summary: opcionalmente podemos elegir si al crear el API proxy, lo desplemamos automáticamente, seleccionamos la opción **test** y terminamos pulsando en **Create**
+
+*Para poder empezar a consumir la API, es necesario asociarla a un producto, ese producto debe ser consumido por una Developer APP y esa APP debe tener asociado un Developer*
