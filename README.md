@@ -67,3 +67,6 @@ En el menú Publis -> Apps, pulsar en el botón **+App** de arriba a la derecha 
 * En el radio button seleccionar **Developer** y en el cuadro de búsqueda seleccionar la app recién creada
 
 #### En la sección de Credentials
+* Product: pulsar el botón **Add product** y seleccionar el producto creado anteriormente.
+
+Pulsar el botón **Create** de arriba a la derecha.
