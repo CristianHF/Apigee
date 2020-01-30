@@ -5,7 +5,7 @@ Registrarse en Apigee: [Apigee login](https://login.apigee.com/login "Apigee log
 
 ### Importar spec
 
-En el menú Develop -> Specs, pulsando en el botón +Spec, hay 3 opciones:
+En el menú Develop -> Specs, pulsando en el botón **+Spec**, hay 3 opciones:
 
 * New Spec: pegar el swagger directamente en el editor
 * Import URL...: usando una URL, por ejemplo de GitHub
@@ -37,3 +37,33 @@ En el menú Develop -> Specs, pasando el ratón por encima, aparecen varias opci
 * Summary: opcionalmente podemos elegir si al crear el API proxy, lo desplemamos automáticamente, seleccionamos la opción **test** y terminamos pulsando en **Create**
 
 *Para poder empezar a consumir la API, es necesario asociarla a un producto, ese producto debe ser consumido por una Developer APP y esa APP debe tener asociado un Developer*
+
+### Crear un API Product
+
+En el menú Publish -> API Products, pulsar el botón **+API Product** de arriba a la derecha
+
+###### En la sección de Products Details
+* Name: nombre interno que tendrá el producto
+* Display Name: o título del producto, nombre con el que se visualizará en el listado de productos
+* Environment: seleccionar el check **test**
+* Access: seleccionar **Private** del menú desplegable
+
+###### En la sección de API resources
+Añadir un proxy en la sección **API proxies** pulsando en **Add a proxy**. En la ventana que aparece seleccionar el proxy **Products** creado anteriormente
+
+Pulsar el botón **Save** de arriba a la derecha.
+
+### Dar de alta a un Developer
+
+En el menú Publish -> Developer, pulsar en el botón **+Developer** de arriba a la derecha e introducir los datos necesarios.
+
+### Crear una Developer APP
+
+En el menú Publis -> Apps, pulsar en el botón **+App** de arriba a la derecha y rellenar los campos.
+
+###### En la sección de App Details
+* Name: nombre interno que tendrá la developer app
+* Display Name: o título de la app, nombre con el que se visualizará en el listado de apps
+* En el radio button seleccionar **Developer** y en el cuadro de búsqueda seleccionar la app recién creada
+
+##### En la sección de Credentials
