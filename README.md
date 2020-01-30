@@ -46,6 +46,8 @@ Con esto ya podemos empezar a consumir la API. Nos vamos al menú Develop -> API
 
 En esta primera pantalla se nos muestra un resumen del proxy y entre otras cosas la URL de llamada.
 
+*Para empezar a añadirle un poco de seguridad, es necesario asociar el API Proxy a un producto, ese producto debe ser consumido por una Developer APP y esa APP debe tener asociado un Developer*
+
 -----
 
 ### Crear un API Product
