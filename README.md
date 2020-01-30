@@ -91,5 +91,3 @@ Pulsar el botón **Create** de arriba a la derecha.
 
 Arriba a la derecha hay varias pestañas
 * DEVELOP: donde podemos modificar el código del proxy, consultar las diferentes revisiones y desplegar en los entornos
-
-*Para poder empezar a consumir la API, es necesario asociarla a un producto, ese producto debe ser consumido por una Developer APP y esa APP debe tener asociado un Developer*
