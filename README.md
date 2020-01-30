@@ -19,7 +19,11 @@ En el menú Develop -> Specs, pasando el ratón por encima, aparecen varias opci
 * Proxy details: se autorrellenan todos los campos a partir de los valores extraidos de la spec, pero los vamos a cambiar por los siguientes
 
 ···Name: Products-API
+
 ···Base path: /
+
 ···Description: Products API
+
 ···Target: dejar la que hay (http://cloud.hipster.s.apigee.com/)
+
 ···Pulsar **Next**
