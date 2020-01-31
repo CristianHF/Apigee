@@ -76,7 +76,7 @@ En el menú Publish -> Developer, pulsar en el botón **+Developer** de arriba a
 
 ### Crear una Developer APP
 
-En el menú Publis -> Apps, pulsar en el botón **+App** de arriba a la derecha y rellenar los campos.
+En el menú Publish -> Apps, pulsar en el botón **+App** de arriba a la derecha y rellenar los campos.
 
 **En la sección de App Details**
 * Name: nombre interno que tendrá la developer app
@@ -90,5 +90,10 @@ Pulsar el botón **Create** de arriba a la derecha.
 
 -----
 
-Arriba a la derecha hay varias pestañas
-* DEVELOP: donde podemos modificar el código del proxy, consultar las diferentes revisiones y desplegar en los entornos
+### Validación del API Key
+
+En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a la pestaña **DEVELOP**
+* En el menú de la izquierda, en **Policies** podemos añadir políticas al proxy pulsando el botón **+**
+* Ir a la sección **SECURITY** y seleccionar la política **Verify API Key**
+* Rellenar el campo **Display Name** y pulsar el botón **Add**
+* En el editor xml que se nos abre podemos cambiar la ubicación y el nombre de la API Key en la petición, por defecto está puesta como *queryparam* y como nombre *apikey*. Vamos a cambiarla a *header_ y como nombre *X-Client-Id_
