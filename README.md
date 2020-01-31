@@ -144,5 +144,7 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
 
 * Pulsar el botón **Save** de arriba a la izquierda
 
+* Para hacer la prueba, usamos el nuevo client id y llamamos 5 veces a la API, todas OK, a la 6ª llamada, devolverá un error **429 Too Many Requests**
+
 -----
 
