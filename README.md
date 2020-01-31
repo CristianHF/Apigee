@@ -121,7 +121,7 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
 * Rellenar el campo **Display Name** y pulsar el botón **Add**
 * En la sección del **PreFlow**, arrastrar la nueva política hasta colocarla al lado de la política de verificación del API Key
 * Modificar el xml con los siguientes valores:
-
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Quota async="false" continueOnError="false" enabled="true" name="Quota" type="calendar">
     <DisplayName>Quota</DisplayName>
@@ -133,6 +133,7 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
     <Synchronous>true</Synchronous>
     <StartTime>2019-01-01 12:00:00</StartTime>
 </Quota>
+```
 
 **Allow**: sirve para indicar el límite de llamadas por unidad de tiempo, se obtiene del producto y si no tiene ninguno asignado, se coge el indicado por **count**
 
