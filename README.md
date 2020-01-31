@@ -173,7 +173,7 @@ Además, creamos y añadimos la política de verificación del API Key al PreFlo
 
 Creamos 2 nuevas políticas de tipo **OAuth v2.0**, una para el listado de cuentas y otra para el detalle de cuentas.
 * A cada una de ellas le añadiremos la etiqueta **Scope** en el editor xml, indicando el scope correspondiente
-´´´xml
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OAuthV2 async="false" continueOnError="false" enabled="true" name="OAuth-v20-Accounts-List">
     <DisplayName>OAuth v2.0 Accounts List</DisplayName>
@@ -186,7 +186,7 @@ Creamos 2 nuevas políticas de tipo **OAuth v2.0**, una para el listado de cuent
     <Tokens/>
     <Scope>account_list.read</Scope>
 </OAuthV2>
-´´´
+```
 * Luego añadimos las políticas al flujo **REQUEST** de cada endpoint
 
 -----
