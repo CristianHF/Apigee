@@ -14,7 +14,7 @@ En el menú Develop -> Specs, pulsando en el botón **+Spec**, hay 3 opciones:
 
 -----
 
-### Crear proxy a partir de una spec
+### Crear proxy a partir de una spec: Products
 
 En el menú Develop -> Specs, pasando el ratón por encima, aparecen varias opciones a la derecha, seleccionar la primera llamada "Generate proxy" y se lanza el wizard.
 
