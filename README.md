@@ -62,7 +62,7 @@ En el menú Publish -> API Products, pulsar el botón **+API Product** de arriba
 
 **En la sección de API resources**
 
-Añadir un proxy en la sección **API proxies** pulsando en **Add a proxy**. En la ventana que aparece seleccionar el proxy **Products** creado anteriormente
+* Añadir un proxy en la sección **API proxies** pulsando en **Add a proxy**. En la ventana que aparece seleccionar el proxy **Products** creado anteriormente
 
 Pulsar el botón **Save** de arriba a la derecha.
 
