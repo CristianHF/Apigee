@@ -86,7 +86,7 @@ En el menú Publish -> Apps, pulsar en el botón **+App** de arriba a la derecha
 **En la sección de Credentials**
 * Product: pulsar el botón **Add product** y seleccionar el producto creado anteriormente.
 
-Pulsar el botón **Create** de arriba a la derecha.
+Pulsar el botón **Create** de arriba a la derecha. Una vez creada, podemos copiarnos el key y el secret para usarlo más tarde.
 
 -----
 
@@ -96,4 +96,9 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
 * En el menú de la izquierda, en **Policies** podemos añadir políticas al proxy pulsando el botón **+**
 * Ir a la sección **SECURITY** y seleccionar la política **Verify API Key**
 * Rellenar el campo **Display Name** y pulsar el botón **Add**
-* En el editor xml que se nos abre podemos cambiar la ubicación y el nombre de la API Key en la petición, por defecto está puesta como *queryparam* y como nombre *apikey*. Vamos a cambiarla a *header_ y como nombre *X-Client-Id_
+* En el editor xml que se nos abre podemos cambiar la ubicación y el nombre de la API Key en la petición, por defecto está puesta como *queryparam* y como nombre *apikey*. Vamos a cambiarla a **header** y como nombre **X-Client-Id**
+* Una vez configurada, hay que añadirla al flujo de ejecución del proxy. En el menú de la izquierda, en la sección de **Proxy Endpoints**, seleccionamos el **PreFlow** y arrastramos la política creada al editor gráfico.
+* Pulsamos el boton **Save** de arriba a la izquierda
+* Para probar, debemos incluir en Postman la cabecera **X-Client-Id** con valor el API Key que copiamos de la Developer APP
+
+-----
