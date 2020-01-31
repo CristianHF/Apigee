@@ -101,6 +101,8 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
 * Pulsamos el boton **Save** de arriba a la izquierda
 * Para probar, debemos incluir en Postman la cabecera **X-Client-Id** con valor el API Key que copiamos de la Developer APP
 
+[Documentación online Apigee sobre validación del API Key](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy)
+
 -----
 
 ### Quotas
@@ -146,7 +148,7 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
 
 * Para hacer la prueba, usamos el nuevo client id y llamamos 5 veces a la API, todas OK, a la 6ª llamada, devolverá un error **429 Too Many Requests**
 
-[Documentación online Apigee sobre quotas](https://docs.apigee.com/api-platform/reference/policies/quota-policy)
+[Documentación online Apigee sobre Quotas](https://docs.apigee.com/api-platform/reference/policies/quota-policy)
 
 -----
 
