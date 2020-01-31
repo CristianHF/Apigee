@@ -107,4 +107,4 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
 
 Sirven para limitar el número de llamadas a una API, para ello necesitamos un API Product y una Developer APP específicos.
 * Crear un nuevo producto. Al llegar a la parte de **Quota**, configurarlo a 5 peticiones por minuto
-* Añadir el API Proxy creado
+* Asociarle el API Proxy creado
