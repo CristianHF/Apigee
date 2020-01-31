@@ -96,9 +96,15 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
 * En el menú de la izquierda, en **Policies** podemos añadir políticas al proxy pulsando el botón **+**
 * Ir a la sección **SECURITY** y seleccionar la política **Verify API Key**
 * Rellenar el campo **Display Name** y pulsar el botón **Add**
-* En el editor xml que se nos abre podemos cambiar la ubicación y el nombre de la API Key en la petición, por defecto está puesta como *queryparam* y como nombre *apikey*. Vamos a cambiarla a **header** y como nombre **X-Client-Id**
+* En el editor xml que se nos abre podemos cambiar la ubicación y el nombre de la API Key en la petición, por defecto está puesta como **queryparam** y como nombre **apikey**. Vamos a cambiarla a **header** y como nombre **X-Client-Id**
 * Una vez configurada, hay que añadirla al flujo de ejecución del proxy. En el menú de la izquierda, en la sección de **Proxy Endpoints**, seleccionamos el **PreFlow** y arrastramos la política creada al editor gráfico.
 * Pulsamos el boton **Save** de arriba a la izquierda
 * Para probar, debemos incluir en Postman la cabecera **X-Client-Id** con valor el API Key que copiamos de la Developer APP
 
 -----
+
+### Quotas
+
+Sirven para limitar el número de llamadas a una API, para ello necesitamos un API Product y una Developer APP específicos.
+* Crear un nuevo producto. Al llegar a la parte de **Quota**, configurarlo a 5 peticiones por minuto
+* Añadir el API Proxy creado
