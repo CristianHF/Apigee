@@ -167,7 +167,7 @@ En el menú e la izquierda, añadir un nuevo recurso en la sección **Resources*
 * Repetir el proceso para **account-details.js**
 
 Creamos 2 nuevas políticas, de tipo **JavaScript**, basadas en los recursos que acabamos de crear.
-Añadimos cada política al flujo correspondiente **RESPONSE** de cada endpoint/recurso.
+Añadimos cada política al flujo **RESPONSE** correspondiente de cada endpoint/recurso.
 
 Además, creamos y añadimos la política de verificación del API Key al PreFlow.
 
