@@ -117,6 +117,7 @@ Sirven para limitar el número de llamadas a una API, para ello necesitamos un A
 * Asociarle el producto recién creado
 
 **Modificar la configuración del API Proxy**
+
 En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a la pestaña **DEVELOP**
 * En el menú de la izquierda, en **Policies** podemos añadir políticas al proxy pulsando el botón **+**
 * Ir a la sección **TRAFFIC MANAGEMENT** y seleccionar la política **Quota**
