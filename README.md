@@ -114,5 +114,29 @@ Sirven para limitar el número de llamadas a una API, para ello necesitamos un A
 **Crear una nueva APP**
 * Asociarle el producto recién creado
 
+**Modificar la configuración del API Proxy**
+En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a la pestaña **DEVELOP**
+* En el menú de la izquierda, en **Policies** podemos añadir políticas al proxy pulsando el botón **+**
+* Ir a la sección **TRAFFIC MANAGEMENT** y seleccionar la política **Quota**
+* Rellenar el campo **Display Name** y pulsar el botón **Add**
+* En la sección del **PreFlow**, arrastrar la nueva política hasta colocarla al lado de la política de verificación del API Key
+* Modificar el xml con los siguientes valores:
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota async="false" continueOnError="false" enabled="true" name="Quota" type="calendar">
+    <DisplayName>Quota</DisplayName>
+    <Allow count="3" countRef="verifyapikey.Verify-API-Key.apiproduct.developer.quota.limit"/>
+    <Interval ref="verifyapikey.Verify-API-Key.apiproduct.developer.quota.interval">1</Interval>
+    <TimeUnit ref="verifyapikey.Verify-API-Key.apiproduct.developer.quota.timeunit">minute</TimeUnit>
+    <Identifier ref="verifyapikey.Verify-API-Key.client_id"/>
+    <Distributed>true</Distributed>
+    <Synchronous>true</Synchronous>
+    <StartTime>2019-01-01 12:00:00</StartTime>
+</Quota>
+
+**Allow**: sirve para indicar el límite de llamadas por unidad de tiempo, se obtiene del producto y si no tiene ninguno asignado, se coge el indicado por **count**
+
+* Pulsar el botón **Save** de arriba a la izquierda
+
 -----
 
