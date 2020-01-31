@@ -54,13 +54,13 @@ En esta primera pantalla se nos muestra un resumen del proxy y entre otras cosas
 
 En el menú Publish -> API Products, pulsar el botón **+API Product** de arriba a la derecha
 
-##### En la sección de Products Details
+**En la sección de Products Details**
 * Name: nombre interno que tendrá el producto
 * Display Name: o título del producto, nombre con el que se visualizará en el listado de productos
 * Environment: seleccionar el check **test**
 * Access: seleccionar **Private** del menú desplegable
 
-##### En la sección de API resources
+**En la sección de API resources**
 Añadir un proxy en la sección **API proxies** pulsando en **Add a proxy**. En la ventana que aparece seleccionar el proxy **Products** creado anteriormente
 
 Pulsar el botón **Save** de arriba a la derecha.
@@ -77,12 +77,12 @@ En el menú Publish -> Developer, pulsar en el botón **+Developer** de arriba a
 
 En el menú Publis -> Apps, pulsar en el botón **+App** de arriba a la derecha y rellenar los campos.
 
-##### En la sección de App Details
+**En la sección de App Details**
 * Name: nombre interno que tendrá la developer app
 * Display Name: o título de la app, nombre con el que se visualizará en el listado de apps
 * En el radio button seleccionar **Developer** y en el cuadro de búsqueda seleccionar la app recién creada
 
-#### En la sección de Credentials
+**En la sección de Credentials**
 * Product: pulsar el botón **Add product** y seleccionar el producto creado anteriormente.
 
 Pulsar el botón **Create** de arriba a la derecha.
