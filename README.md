@@ -182,7 +182,9 @@ Creamos una nueva política de tipo **Extract Variables**, llamada **Extract Acc
     <VariablePrefix>requestpath</VariablePrefix>
 </ExtractVariables>
 ```
-*Con esto creamos una variable de entorno que luego la política **Accounts Details** usará*
+Luego la añadimos al flujo **RESPONSE** del detalle de cuenta, justo antes de la política **Account Details**.
+
+*Con esto creamos una variable de entorno que luego la política **Account Details** usará*
 
 Además, creamos y añadimos la política de verificación del API Key al PreFlow.
 
