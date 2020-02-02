@@ -201,7 +201,7 @@ Creamos 2 nuevas políticas de tipo **OAuth v2.0**, una para el listado de cuent
     <SupportedGrantTypes/>
     <GenerateResponse enabled="true"/>
     <Tokens/>
-    <Scope>account_list.read</Scope>
+    <Scope>accounts_list.read</Scope>
 </OAuthV2>
 ```
 * Luego añadimos las políticas al flujo **REQUEST** de cada endpoint
