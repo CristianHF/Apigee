@@ -242,7 +242,7 @@ Si no se dispone de un API Proxy OAuth por defecto, hay que cargarlo
 
 ### Prueba completa con seguridad
 
-* El primer paso es llamar al API Proxy OAuth, indicando como form parameter el grant type y los scopes, separados por espacios en blanco. Además hay que informar las credenciales y se puede hacer de dos formas, informando los campos **client_id** y **client_secret** como form parameters o como cabecera **Authorization** de tipo **Basic**. Esto nos devuelve un JSON de respuesta con un access token entre otros campos
+* El primer paso es llamar al API Proxy OAuth, indicando como form parameter el **grant_type** y el **scope**, separados por espacios en blanco si fuesen varios. Además hay que informar las credenciales y se puede hacer de dos formas, informando los campos **client_id** y **client_secret** como form parameters o como cabecera **Authorization** de tipo **Basic**. Esto nos devuelve un JSON de respuesta con un access token entre otros campos
 * Con ese access token podemos llamar al API Proxy informando la cabecera **Authorization** de tipo **Bearer**. Dependiendo de qué scopes hayamos puesto en la petición del access token, tendremos permiso para ejecutar ciertos endpoints
 
 -----
