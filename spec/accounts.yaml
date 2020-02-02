@@ -19,7 +19,7 @@ securityDefinitions:
     description: Client credentials security flow.
     flow: application
     scopes:
-      account_list.read: Accounts list scope.
+      accounts_list.read: Accounts list scope.
       account_details.read: Account details scope.
     tokenUrl: 'https://localhost.com/oauth/token'
     x-tokenIntrospect:
@@ -49,7 +49,7 @@ paths:
         - $ref: '#/parameters/Authorization'
       security:
         - Client Credentials:
-            - account_list.read
+            - accounts_list.read
       tags:
         - Accounts
   '/accounts/{account_id}':
