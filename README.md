@@ -169,6 +169,21 @@ En el menú e la izquierda, añadir un nuevo recurso en la sección **Resources*
 Creamos 2 nuevas políticas, de tipo **JavaScript**, basadas en los recursos que acabamos de crear.
 Añadimos cada política al flujo **RESPONSE** correspondiente de cada endpoint/recurso.
 
+Creamos una nueva política de tipo **Extract Variables**, llamada **Extract Account Id** y en el editor xml introducimos la siguiente configuración:
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="Extract-Account-Id">
+    <DisplayName>Extract Account Id</DisplayName>
+    <Properties/>
+    <URIPath name="accountId">
+        <Pattern>**/{accountId}</Pattern>
+    </URIPath>
+    <Source clearPayload="false">request</Source>
+    <VariablePrefix>requestpath</VariablePrefix>
+</ExtractVariables>
+```
+*Con esto creamos una variable de entorno que luego la política **Accounts Details** usará*
+
 Además, creamos y añadimos la política de verificación del API Key al PreFlow.
 
 Creamos 2 nuevas políticas de tipo **OAuth v2.0**, una para el listado de cuentas y otra para el detalle de cuentas.
