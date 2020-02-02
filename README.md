@@ -189,4 +189,6 @@ Creamos 2 nuevas políticas de tipo **OAuth v2.0**, una para el listado de cuent
 ```
 * Luego añadimos las políticas al flujo **REQUEST** de cada endpoint
 
+**Crear además un API Product, una Developer APP y una APP**
+
 -----
