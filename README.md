@@ -238,6 +238,8 @@ Si no se dispone de un API Proxy OAuth por defecto, hay que cargarlo
 </OAuthV2>
 ```
 
+[Documentación online Apigee sobre como securizar APIs](https://docs.apigee.com/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials)
+
 -----
 
 ### Prueba completa con seguridad
