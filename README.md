@@ -189,6 +189,6 @@ Creamos 2 nuevas políticas de tipo **OAuth v2.0**, una para el listado de cuent
 ```
 * Luego añadimos las políticas al flujo **REQUEST** de cada endpoint
 
-**Crear además un API Product, una Developer APP y una APP.** En el caso del API Proudct, al crearlo, hay que configurarle unos scopes en la sección de **Allowed OAuth scope**, separados únicamente por comas sin espacios en blanco.
+**Crear además un API Product y una Developer APP.** En el caso del API Proudct, al crearlo, hay que configurarle unos scopes en la sección de **Allowed OAuth scope**, separados únicamente por comas sin espacios en blanco.
 
 -----
