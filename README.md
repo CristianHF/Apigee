@@ -155,7 +155,7 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
 
 -----
 
-### OAuth
+### Securizar API Proxy con OAuth
 
 Importar la spec **Accounts** y crear un proxy básico, con **Base path: /** y **Target** cualquier cosa, ya que no lo vamos a usar.
 
@@ -207,5 +207,34 @@ Creamos 2 nuevas políticas de tipo **OAuth v2.0**, una para el listado de cuent
 * Luego añadimos las políticas al flujo **REQUEST** de cada endpoint
 
 **Crear además un API Product y una Developer APP.** En el caso del API Proudct, al crearlo, hay que configurarle unos scopes en la sección de **Allowed OAuth scope**, separados únicamente por comas sin espacios en blanco.
+
+Si no se dispone de un API Proxy OAuth por defecto, hay que cargarlo
+* En el menú Develop -> API Proxies, pulsar el botón **+API Proxy** de arriba a la derecha
+* Seleccionar la opción **Upload proxy bundle**
+* Cargar el zip de oauth, podemos cambiarle el nombre si queremos
+* Pulsar **Next**
+* Opcionalmente podemos desplegar el proxy a la vez que lo creamos, en este caso vamos a configurarlo antes de desplegarlo
+* Pulsamos **Create**
+* Editamos el proxy en la pestaña **DEVELOP**
+* Modificamos la política **GenerateAccessTokenClient** indicando que el **grant_type** lo vamos a extraer como form parameter y no como query parameter
+* Además le añadimos un campo más de entrada, el scope para el que queremos generar el access token
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 name="GenerateAccessTokenClient">
+    <!-- This policy generates an OAuth 2.0 access token using the client_credentials grant type -->
+    <Operation>GenerateAccessToken</Operation>
+    <!-- This is in millseconds, so expire in an hour -->
+    <ExpiresIn>3600000</ExpiresIn>
+    <SupportedGrantTypes>
+        <!-- This part is very important: most real OAuth 2.0 apps will want to use other
+         grant types. In this case it is important to NOT include the "client_credentials"
+         type because it allows a client to get access to a token with no user authentication -->
+        <GrantType>client_credentials</GrantType>
+    </SupportedGrantTypes>
+    <GrantType>request.formparam.grant_type</GrantType>
+    <Scope>request.formparam.scope</Scope>
+    <GenerateResponse/>
+</OAuthV2>
+```
 
 -----
