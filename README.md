@@ -218,6 +218,7 @@ Si no se dispone de un API Proxy OAuth por defecto, hay que cargarlo
 * Editamos el proxy en la pestaña **DEVELOP**
 * Modificamos la política **GenerateAccessTokenClient** indicando que el **grant_type** lo vamos a extraer como form parameter y no como query parameter
 * Además le añadimos un campo más de entrada, el scope para el que queremos generar el access token
+
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OAuthV2 name="GenerateAccessTokenClient">
