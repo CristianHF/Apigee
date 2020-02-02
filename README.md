@@ -239,3 +239,8 @@ Si no se dispone de un API Proxy OAuth por defecto, hay que cargarlo
 ```
 
 -----
+
+### Prueba completa con seguridad
+
+* El primer paso es llamar al API Proxy OAuth, indicando como form parameter el grant type y los scopes, separados por espacios en blanco. Además hay que informar las credenciales y se puede hacer de dos formas:
+...fdas
