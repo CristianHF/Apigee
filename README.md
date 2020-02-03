@@ -155,13 +155,69 @@ En el menú Develop -> API Proxies, seleccionar el proxy Products y movernos a l
 
 -----
 
+### Parametrización con Key Value Maps (KVM)
+
+En el menú Admin -> Environments -> Key Value Maps, cambiar al entorno **test** y pulsar el botón de arriba a la derecha **+Key value map**
+
+* Ponerle como nombre por ejemplo **products_kvm**, luego pulsar en el botón **Add**
+* Añadir una pareja de clave valor pulsando el botón de arriba a la derecha **Add key value pair**
+* Ponerle un nombre, por ejemplo **target-url** y valor **http://cloud.hipster.s.apigee.com/**
+* Pulsar el botón **Add**
+
+Una vez creado el KVM, volvemos al API Proxy y creamos una nueva política, de tipo **Key Value Map Operations** y la añadimos **REQUEST** del **PreFlow**. Sustituir el contenido por el siguiente:
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Key-Value-Map" mapIdentifier="products_kvm ">
+    <DisplayName>Key Value Map</DisplayName>
+    <Properties/>
+    <Get assignTo="targetUrl">
+        <Key>
+            <Parameter>target-url</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>
+```
+*Teniendo especial cuidado en el campo **mapIdentifier**, que debe hacer referencia al KVM creado y al **Parameter**, que debe coincidir con la clave cuyo valor quremos recuperar*
+
+Esto únicamente guarda en una variable llamada **targetUrl** la URL guardada en el KVM.
+
+Ahora creamos una nueva política de tipo **Assign Message** y editamos el xml
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Set-Target-Url">
+    <DisplayName>Set Target Url</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>target.url</Name>
+        <Value>targetUrl</Value>
+        <Ref>targetUrl</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>
+```
+*La variable **target.url** es una variable de entorno de Apigee que contiene la URL a la que se llama, aquí la estamos modificando*
+
+En el menú e la izquierda, añadir un nuevo recurso en la sección **Resources**. Creamos un nuevo fichero, de tipo javascript y nombre **set-target-url**, pulsamos el botón **Add**. Deberá contener esto:
+```js
+context.setVariable("target.url", context.getVariable("target.url") + context.getVariable("proxy.pathsuffix"));
+```
+Creamos una nueva política, de tipo **Javascript**, basada en el recurso recién creado
+
+Nos movemos al Target Endpoint **default** y añadimos a la **REQUEST** del **PreFlow** las políticas **Assign Message** y **Set Target Url JS**.
+
+Para evitar confusiones, podemos cambiar el valor **URL** de la sección **HTTPTargetConnection** y al hacer la prueba comprobaremos que no la tendrá en cuenta, siempre usará la URL del KVM.
+
+-----
+
 ### Securizar API Proxy con OAuth
 
 Importar la spec **Accounts** y crear un proxy básico, con **Base path: /** y **Target** cualquier cosa, ya que no lo vamos a usar.
 
 Entramos a la sección **DEVELOP** del API Proxy y en el menú de la izquierda eliminar el Target Endpoint **default**
 
-En el menú e la izquierda, añadir un nuevo recurso en la sección **Resources**
+Añadimos un nuevo recurso en la sección **Resources**
 * Creamos nuevo fichero, de tipo javascript y nombre **accounts_list.js**, pulsamos el botón **Add**
 * En el editor copiar el contenido del fichero accounts-list.js
 * Repetir el proceso para **account-details.js**
