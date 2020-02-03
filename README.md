@@ -211,6 +211,9 @@ Nos movemos al Target Endpoint **default** y añadimos a la **REQUEST** del **Pr
 
 Para evitar confusiones, podemos cambiar el valor **URL** de la sección **HTTPTargetConnection** y al hacer la prueba comprobaremos que no la tendrá en cuenta, siempre usará la URL del KVM.
 
+[Documentación online Apigee sobre Key Value Map Operations](https://docs.apigee.com/api-platform/reference/policies/key-value-map-operations-policy)
+[Documentación online Apigee sobre Assign Message](https://docs.apigee.com/api-platform/reference/policies/assign-message-policy)
+
 -----
 
 ### Securizar API Proxy con OAuth
