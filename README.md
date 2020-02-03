@@ -264,6 +264,20 @@ Creamos 2 nuevas políticas de tipo **OAuth v2.0**, una para el listado de cuent
     <Scope>accounts_list.read</Scope>
 </OAuthV2>
 ```
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="OAuth-v20-Account-Details">
+    <DisplayName>OAuth v2.0 Account Details</DisplayName>
+    <Properties/>
+    <Attributes/>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>VerifyAccessToken</Operation>
+    <SupportedGrantTypes/>
+    <GenerateResponse enabled="true"/>
+    <Tokens/>
+    <Scope>account_details.read</Scope>
+</OAuthV2>
+```
 * Luego añadimos las políticas al flujo **REQUEST** de cada endpoint
 
 **Crear además un API Product y una Developer APP.** En el caso del API Proudct, al crearlo, hay que configurarle unos scopes en la sección de **Allowed OAuth scope**, separados únicamente por comas sin espacios en blanco.
