@@ -203,7 +203,7 @@ En el menú e la izquierda, añadir un nuevo recurso en la sección **Resources*
 ```js
 context.setVariable("target.url", context.getVariable("target.url") + context.getVariable("proxy.pathsuffix"));
 ```
-Creamos una nueva política, de tipo **Javascript**, basada en el recurso recién creado
+Creamos una nueva política, de tipo **Javascript**, basada en el recurso recién creado, llamada **Set Target Url JS**.
 
 Nos movemos al Target Endpoint **default** y añadimos a la **REQUEST** del **PreFlow** las políticas **Assign Message** y **Set Target Url JS**.
 
