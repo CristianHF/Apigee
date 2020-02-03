@@ -197,12 +197,14 @@ Ahora creamos una nueva política de tipo **Assign Message** y editamos el xml
     <AssignTo createNew="false" transport="http" type="request"/>
 </AssignMessage>
 ```
-*La variable **target.url** es una variable de entorno de Apigee que contiene la URL a la que se llama, aquí la estamos modificando*
+*La variable **target.url** es una variable de entorno de Apigee que contiene la URL a la que se llama, aquí la estamos modificando*.
 
 En el menú e la izquierda, añadir un nuevo recurso en la sección **Resources**. Creamos un nuevo fichero, de tipo javascript y nombre **set-target-url**, pulsamos el botón **Add**. Deberá contener esto:
 ```js
 context.setVariable("target.url", context.getVariable("target.url") + context.getVariable("proxy.pathsuffix"));
 ```
+*Aquí únicamente le estamos concatenando el endpoint a la target url*.
+
 Creamos una nueva política, de tipo **Javascript**, basada en el recurso recién creado, llamada **Set Target Url JS**.
 
 Nos movemos al Target Endpoint **default** y añadimos a la **REQUEST** del **PreFlow** las políticas **Assign Message** y **Set Target Url JS**.
