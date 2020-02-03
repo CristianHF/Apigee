@@ -178,9 +178,7 @@ Una vez creado el KVM, volvemos al API Proxy y creamos una nueva política, de t
     <Scope>environment</Scope>
 </KeyValueMapOperations>
 ```
-*Teniendo especial cuidado en el campo **mapIdentifier**, que debe hacer referencia al KVM creado y al **Parameter**, que debe coincidir con la clave cuyo valor quremos recuperar*
-
-Esto únicamente guarda en una variable llamada **targetUrl** la URL guardada en el KVM.
+*Teniendo especial cuidado en el campo **mapIdentifier**, que debe hacer referencia al KVM creado y al **Parameter**, que debe coincidir con la clave cuyo valor quremos recuperar. Esto guarda en una variable llamada **targetUrl** la URL guardada en el KVM.*
 
 Ahora creamos una nueva política de tipo **Assign Message** y editamos el xml
 ```xml
@@ -197,7 +195,7 @@ Ahora creamos una nueva política de tipo **Assign Message** y editamos el xml
     <AssignTo createNew="false" transport="http" type="request"/>
 </AssignMessage>
 ```
-*La variable **target.url** es una variable de entorno de Apigee que contiene la URL a la que se llama, aquí la estamos modificando*.
+*La variable **target.url** es una variable de entorno de Apigee que contiene la URL a la que se llama, aquí la estamos modificando.*
 
 En el menú e la izquierda, añadir un nuevo recurso en la sección **Resources**. Creamos un nuevo fichero, de tipo javascript y nombre **set-target-url**, pulsamos el botón **Add**. Deberá contener esto:
 ```js
