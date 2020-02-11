@@ -72,7 +72,7 @@ if (authorization) {
 		errorResponse = {
 			"errors": [{
 				"code": "404",
-				"message": "Nof Found",
+				"message": "Not Found",
 				"level": "Error",
 				"description": "Not Found"
 			}]
